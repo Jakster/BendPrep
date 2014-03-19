@@ -119,8 +119,8 @@ public class BendPrep {
         double b = -0.021584160;
         double a = 0.001057781;
         double pwr = a*length*length + b*length + c;
-        System.out.println("length " + length);
-        System.out.println("pwr " + pwr);
+        //System.out.println("length " + length);
+        //System.out.println("pwr " + pwr);
         return (int) Math.round(pwr);
     }
     
