@@ -28,28 +28,38 @@
               <Component id="jLabel3" min="-2" pref="357" max="-2" attributes="0"/>
               <EmptySpace pref="254" max="32767" attributes="0"/>
           </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="520" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="closeButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="startButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jScrollPane1" alignment="1" min="-2" pref="520" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                          <Component id="closeButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="303" max="-2" attributes="0"/>
+                          <Component id="startButton" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="sourcePath" pref="251" max="32767" attributes="0"/>
+                                  <Component id="paramPath" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -72,36 +82,23 @@
                                       <Component id="focusHeight" min="-2" pref="84" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="xdiv" min="-2" pref="84" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="accuracy" min="-2" pref="84" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="ydiv" min="-2" pref="84" max="-2" attributes="0"/>
-                                      </Group>
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="xdiv" min="-2" pref="84" max="-2" attributes="0"/>
                                   </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="sourcePath" pref="251" max="32767" attributes="0"/>
-                                  <Component id="paramPath" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="accuracy" min="-2" pref="84" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ydiv" min="-2" pref="84" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
@@ -113,11 +110,6 @@
                   </Group>
               </Group>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="281" max="-2" attributes="0"/>
-              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -142,9 +134,7 @@
                   </Group>
                   <Component id="browseParam" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="accuracy" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -170,14 +160,14 @@
                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="focusHeight" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="17" max="32767" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="204" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="198" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="startButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="closeButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -229,7 +219,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Welcome to BendPrep! Please enter file locations below"/>
+        <Property name="text" type="java.lang.String" value="Welcome to BendPrep! Please enter file locations below:"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -272,14 +262,6 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>
         </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Lucida Grande" size="24" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="OR"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">

@@ -1,7 +1,11 @@
 
 package com.t_voigt.bendprep;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.util.StringTokenizer;
 /**
  *
  * @author timo
@@ -42,7 +46,6 @@ public class BendPrepGui extends javax.swing.JDialog {
         startButton = new javax.swing.JButton();
         closeButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         bendColor = new javax.swing.JTextField();
@@ -102,7 +105,7 @@ public class BendPrepGui extends javax.swing.JDialog {
 
         jLabel2.setText("parameter file location");
 
-        jLabel3.setText("Welcome to BendPrep! Please enter file locations below");
+        jLabel3.setText("Welcome to BendPrep! Please enter file locations below:");
 
         log.setEditable(false);
         log.setColumns(15);
@@ -125,9 +128,6 @@ public class BendPrepGui extends javax.swing.JDialog {
         });
 
         jSeparator1.setForeground(new java.awt.Color(102, 102, 102));
-
-        jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        jLabel4.setText("OR");
 
         jLabel5.setText("bendColor");
 
@@ -193,24 +193,31 @@ public class BendPrepGui extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(254, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jSeparator1)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(closeButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(startButton))
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(3, 3, 3)
+                            .addComponent(closeButton)
+                            .addGap(303, 303, 303)
+                            .addComponent(startButton)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel1))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(sourcePath, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+                                    .addComponent(paramPath)))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel7)
@@ -228,38 +235,25 @@ public class BendPrepGui extends javax.swing.JDialog {
                                         .addComponent(jLabel8)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(focusHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(206, 206, 206)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel10)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(xdiv, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel9)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(accuracy, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel11)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(ydiv, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(sourcePath, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
-                                    .addComponent(paramPath))))
+                                .addGap(26, 26, 26)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(xdiv, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(accuracy, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ydiv, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(browseParam)
                             .addComponent(browseSource))))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(281, 281, 281)
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,9 +273,7 @@ public class BendPrepGui extends javax.swing.JDialog {
                         .addComponent(paramPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel2))
                     .addComponent(browseParam, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
-                .addGap(13, 13, 13)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(accuracy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
@@ -303,13 +295,13 @@ public class BendPrepGui extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(focusHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(startButton)
                     .addComponent(closeButton))
-                .addContainerGap())
+                .addGap(43, 43, 43))
         );
 
         pack();
@@ -352,7 +344,16 @@ public class BendPrepGui extends javax.swing.JDialog {
             System.out.println("Please specify Parameters first!");
         } else {
             if (!paramPath.getText().equals("path to file...")) {
-                BendPrep.prep(sourcePath.getText(), paramPath.getText(), null);
+                if (bendColor.getText().isEmpty() || cutColor.getText().isEmpty() || offset.getText().isEmpty() ||
+                focusHeight.getText().isEmpty() || accuracy.getText().isEmpty() || xdiv.getText().isEmpty() ||
+                ydiv.getText().isEmpty()) {
+                    ParameterDummy dummy = new ParameterDummy(bendColor.getText(), cutColor.getText(), Double.parseDouble(offset.getText()),
+                    Double.parseDouble(focusHeight.getText()), Double.parseDouble(accuracy.getText()), Double.parseDouble(xdiv.getText()), 
+                    Double.parseDouble(ydiv.getText()));
+                    BendPrep.prep(sourcePath.getText(), null, dummy);
+                } else {
+                    BendPrep.prep(sourcePath.getText(), paramPath.getText(), null);
+                }
             } else {
                 ParameterDummy dummy = new ParameterDummy(bendColor.getText(), cutColor.getText(), Double.parseDouble(offset.getText()),
                 Double.parseDouble(focusHeight.getText()), Double.parseDouble(accuracy.getText()), Double.parseDouble(xdiv.getText()), 
@@ -377,6 +378,9 @@ public class BendPrepGui extends javax.swing.JDialog {
             file = fc.getSelectedFile();
             String path = file.getAbsolutePath();
             paramPath.setText(path);
+            try {
+                fillParamFields(path);
+            } catch (IOException e) {}
             //Now you have your file to do whatever you want to do
         } else {
             //User did not choose a valid file
@@ -384,6 +388,33 @@ public class BendPrepGui extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_browseParamActionPerformed
 
+    private void fillParamFields(String configfile) throws IOException{
+        FileReader fr = new FileReader(configfile);
+            BufferedReader br = new BufferedReader(fr);
+            String line;
+            while ((line = br.readLine()) != null) {
+                StringTokenizer st = new StringTokenizer(line);
+                String type = (String) st.nextElement();
+                String value = (String) st.nextElement();
+                //System.out.println(type + " " + value);
+                switch (type) {
+                    case "bendColor":   bendColor.setText(value);
+                                        break;
+                    case "cutColor":    cutColor.setText(value);
+                                        break;
+                    case "offset":      offset.setText(value);
+                                        break;
+                    case "focusHeight": focusHeight.setText(value);
+                                        break;
+                    case "accuracy":    accuracy.setText(value);
+                                        break;
+                    case "xdiv":        xdiv.setText(value);
+                                        break;
+                    case "ydiv":        ydiv.setText(value);
+                                        break;
+                }
+            }
+    }
     private void paramPathMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_paramPathMouseClicked
         // TODO add your handling code here:
         if(countP == 0) {
@@ -486,7 +517,6 @@ public class BendPrepGui extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
